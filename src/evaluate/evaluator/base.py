@@ -446,6 +446,7 @@ class Evaluator(ABC):
         start_time = perf_counter()
         pipe_output = pipe(*args, **kwargs, **self.PIPELINE_KWARGS)
         end_time = perf_counter()
+        print("pipe output", pipe_output)
         return pipe_output, self._compute_time_perf(start_time, end_time, len(pipe_output))
 
     def compute_metric(
